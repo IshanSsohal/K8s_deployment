@@ -7,7 +7,7 @@ metadata:
     app: mysql
 spec:
   imagePullSecrets:
-  - name: ecr-secret-db
+  - name: mysql-registry-secret
   containers:
   - name: mysql
     image: 102026388922.dkr.ecr.us-east-1.amazonaws.com/clo835/assignment2:mysql-v0.1
