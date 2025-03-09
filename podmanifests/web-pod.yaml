@@ -6,6 +6,8 @@ metadata:
   labels:
     app: webapp
 spec:
+  imagePullSecrets:
+  - name: webapp-registry-secret
   containers:
   - name: webapp
     image: 102026388922.dkr.ecr.us-east-1.amazonaws.com/clo835/assignment2:app-v0.1
@@ -13,7 +15,7 @@ spec:
     - containerPort: 8080
     env:
     - name: DBHOST
-      value: "mysql-service.mysql"  # The DNS name of the MySQL service
+      value: "mysql-service.mysql"  # Points to the MySQL service in the 'mysql' namespace
     - name: DBUSER
       value: "root"
     - name: DBPWD
